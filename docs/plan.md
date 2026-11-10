@@ -36,11 +36,12 @@ Scope: `online/` app shell, `online/data/calendar.json`, `/kalendar` viewer, Ver
 - [x] Verified: 4 blocks × exactly 35 academic days (7×5); last block 40 days with W14 doubled (Jun 6–10 + Jun 13–17).
 - [x] 19/19 assertions pass; group containers now always span Sun–Thu runs.
 
-## Phase 2 — Admin (next, not now)
-- [ ] `/admin` login via Google OAuth, allowlist from `ADMIN_EMAILS`.
-- [ ] Event table + Add/Edit modal reading/writing `calendar.json` in-memory.
-- [ ] `POST /api/publish-calendar`: validate, sort, commit to GitHub (holds `GITHUB_TOKEN` server-side).
-- [ ] Verify non-technical admin can edit → publish → see change live; git commit = audit.
+## Phase 2 — Admin (built 10 Nov 2026, owner verification pending)
+- [x] `online/api/lib/session.js` — HMAC sessions, allowlist; `lib/weeks.js` — validation + weeks regen (JS port; reproduces registry byte-for-byte).
+- [x] `online/api/auth.js` — Google login/callback/logout/me; `online/api/publish-calendar.js` — validate + regen + GitHub commit. Zero npm deps.
+- [x] `online/admin/` editor — login gate, 20-row table, add/edit modal, delete, publish button, BM-first.
+- [x] Tests: session round-trip/tamper, regen==registry, validation rejects, publish 401/400/happy-path, auth me — ALL PASS. Admin assets serve 200 (`/api/*` only runs on Vercel, not local server).
+- [ ] OWNER: push to GitHub, confirm Vercel deploy; test login (allowlisted in, other Gmail rejected); supervised no-op publish; supervised real edit.
 
 ## Phase 3 — Future (deferred)
 - [ ] ICS subscribe (`/unisza.ics`) + per-event Add to Calendar buttons (`Asia/Kuala_Lumpur`).
