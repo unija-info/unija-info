@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ms" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bila UniSZA Cuti? — Kalendar Akademik 2026/2027</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="page">
+  <p id="week-pill" class="week-pill">—</p>
+  <h1>Bila UniSZA Cuti?</h1>
+  <p class="tagline">Kalendar akademik UniSZA interaktif. Lihat jadual pendaftaran, kuliah, peperiksaan, dan cuti semester.</p>
+  <div id="legend" class="legend"></div>
+
+  <div class="toolbar">
+    <select id="sem-select" aria-label="Tapisan semester">
+      <option value="semua">Semua</option>
+      <option value="pendek">Semester Pendek</option>
+      <option value="pertama">Semester Pertama</option>
+      <option value="kedua">Semester Kedua</option>
+    </select>
+    <div class="toolbar-actions">
+      <button id="today-btn" type="button" title="Lompat ke hari ini">📅</button>
+      <button id="list-btn" type="button" title="Senarai acara">☰</button>
+      <button id="theme-btn" type="button" title="Tukar tema">⚙</button>
+    </div>
+  </div>
+
+  <section id="today-card" class="today-card" aria-live="polite">
+    <p class="today-label">Hari Ini</p>
+    <div class="today-date"><strong id="today-dow">—</strong><span id="today-full">—</span></div>
+    <div class="today-info"><p id="today-phase" class="today-phase">Memuatkan…</p><p id="today-next" class="today-next"></p></div>
+  </section>
+
+  <section id="months" class="months"></section>
+
+  <section id="list-section" class="list-section">
+    <h2>Senarai Acara</h2>
+    <ul id="event-list" class="event-list"></ul>
+  </section>
+
+  <footer class="foot">
+    <p><strong>Sumber:</strong> PINDAAN RUMUSAN KALENDAR 2026/2027 (Senat 236 Bil.6/2026). <strong>Tertakluk kepada perubahan.</strong></p>
+    <p><a href="https://view.unija.info/file/rumusan_kalendar_akademik.html">PDF rasmi</a> · <a href="../data/calendar.json">Data JSON</a> · <a href="../">UniJA Info</a></p>
+  </footer>
+</main>
+
+<script src="./app.js"></script>
+</body>
+</html>

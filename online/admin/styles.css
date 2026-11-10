@@ -1,0 +1,29 @@
+:root { --bg:#fff; --ink:#111; --muted:#8a8a8a; --line:#ececec; --fill:#f1f3f4; --brand:#0e7a55; --danger:#dc2626; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; }
+.wrap { max-width:1000px; margin:0 auto; padding:24px 16px 80px; }
+.crumbs { color:var(--muted); font-size:13px; }
+.crumbs a { color:inherit; }
+h1 { margin:6px 0 12px; }
+.card { border:1px solid var(--line); border-radius:14px; padding:20px; margin-top:12px; }
+.hidden { display:none !important; }
+.err { color:var(--danger); }
+.ok { color:var(--brand); }
+.status { min-height:1.4em; }
+.muted { color:var(--muted); font-size:12px; }
+.hint { color:var(--muted); font-size:13px; }
+.bar { display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin:12px 0; }
+.spacer { flex:1; }
+.btn { display:inline-block; border:2px solid var(--line); background:#fff; color:var(--ink); border-radius:10px; padding:8px 14px; font-weight:700; cursor:pointer; text-decoration:none; font-size:14px; margin-right:6px; }
+.btn.primary { background:var(--brand); border-color:var(--brand); color:#fff; }
+.btn.ghost { border-color:var(--brand); color:var(--brand); }
+.btn.small { padding:4px 10px; font-size:13px; }
+.btn.danger { border-color:var(--danger); color:var(--danger); }
+.btn:disabled { opacity:.6; cursor:wait; }
+.tbl { width:100%; border-collapse:collapse; font-size:14px; }
+.tbl th, .tbl td { text-align:left; border-bottom:1px solid var(--line); padding:8px 6px; vertical-align:top; }
+.modal { position:fixed; inset:0; background:rgba(0,0,0,.4); display:flex; align-items:flex-start; justify-content:center; padding:24px 12px; overflow:auto; z-index:60; }
+.modal-box { background:#fff; border-radius:14px; padding:20px; width:min(560px,100%); }
+.modal-box label { display:block; font-size:13px; font-weight:700; margin:10px 0; }
+.modal-box input, .modal-box select, .modal-box textarea { display:block; width:100%; margin-top:4px; font:inherit; font-weight:400; padding:8px; border:1px solid var(--line); border-radius:8px; }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }

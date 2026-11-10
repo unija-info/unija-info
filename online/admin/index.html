@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ms" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin Kalendar — UniJA Info</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="wrap">
+  <p class="crumbs"><a href="../">← UniJA Info</a> · Admin Kalendar Akademik</p>
+  <h1>Admin Kalendar</h1>
+
+  <section id="login-card" class="card hidden">
+    <p>Sila log masuk dengan akaun Google admin.</p>
+    <a class="btn" href="/api/auth?action=login">Log masuk dengan Google</a>
+    <p id="login-err" class="err"></p>
+  </section>
+
+  <section id="app" class="hidden">
+    <div class="bar">
+      <span id="who"></span>
+      <span class="spacer"></span>
+      <button id="add-btn" type="button" class="btn">+ Tambah acara</button>
+      <button id="publish-btn" type="button" class="btn primary">Simpan &amp; Terbitkan</button>
+      <a class="btn ghost" href="/api/auth?action=logout">Log keluar</a>
+    </div>
+    <p id="status" class="status" aria-live="polite"></p>
+    <p class="hint">Minggu Kuliah dijana semula automatik semasa terbit — jangan edit manual.</p>
+    <table class="tbl">
+      <thead><tr><th>#</th><th>Acara</th><th>Semester</th><th>Jenis</th><th>Tarikh</th><th></th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </section>
+
+  <div id="modal" class="modal hidden">
+    <div class="modal-box">
+      <h2 id="modal-title">Edit acara</h2>
+      <label>Semester
+        <select id="f-semester">
+          <option value="pendek">Semester Pendek</option>
+          <option value="pertama">Semester Pertama</option>
+          <option value="kedua">Semester Kedua</option>
+        </select>
+      </label>
+      <label>Jenis
+        <select id="f-type">
+          <option value="pendaftaran">Pendaftaran</option>
+          <option value="kuliah">Kuliah</option>
+          <option value="cuti-pertengahan">Cuti Pertengahan</option>
+          <option value="ulangkaji">Ulangkaji</option>
+          <option value="peperiksaan">Peperiksaan</option>
+          <option value="cuti-semester">Cuti Semester</option>
+        </select>
+      </label>
+      <label>Tajuk (BM) <input id="f-title-ms" type="text"></label>
+      <label>Tajuk (EN) <input id="f-title-en" type="text"></label>
+      <div class="two">
+        <label>Mula <input id="f-start" type="date"></label>
+        <label>Tamat (kosong = belum diumumkan) <input id="f-end" type="date"></label>
+      </div>
+      <label>Tempoh <input id="f-tempoh" type="text" placeholder="cth: 7 minggu"></label>
+      <label>Nota (BM) <textarea id="f-nota-ms" rows="2"></textarea></label>
+      <label>Nota (EN) <textarea id="f-nota-en" rows="2"></textarea></label>
+      <p id="form-err" class="err"></p>
+      <div class="bar">
+        <span class="spacer"></span>
+        <button id="modal-cancel" type="button" class="btn ghost">Batal</button>
+        <button id="modal-save" type="button" class="btn primary">Simpan</button>
+      </div>
+    </div>
+  </div>
+</main>
+<script src="./app.js"></script>
+</body>
+</html>
